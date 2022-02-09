@@ -86,7 +86,6 @@ def process_annotation(ann_path, img_meta, voc_anns):
         for line in lines:
             label, bbox = line_to_object(line)
             new_bbox = resize_object(bbox, xscale, yscale)
-            print(new_bbox)
             xml_ann += object_to_xml(label, new_bbox)
         xml_ann += "</annotation>"
         dest_ann.write(xml_ann)
