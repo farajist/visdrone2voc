@@ -34,7 +34,7 @@ def visdrone2voc():
         makedirs(voc_anns, exist_ok=True)
 
         for src_ann, src_img in zip(sorted(ann_list), sorted(img_list)):
-            img_meta = process_image(src_img, [args.h, args.w, 3], voc_images)
+            img_meta = process_image(src_img, (args.w, args.h, 3), voc_images)
             process_annotation(src_ann, img_meta, voc_anns)
             print(f'done processing {img_meta["file"]}')
 

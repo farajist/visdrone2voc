@@ -63,10 +63,10 @@ def line_to_object(line):
 def resize_object(bbox, xscale, yscale):
     [xmin, ymin, xmax, ymax] = bbox
     return [
-        np.round(xmin * xscale), 
-        np.round(ymin * yscale), 
-        np.round(xmax * xscale), 
-        np.round(ymax * yscale)
+        int(np.round(xmin * xscale)), 
+        int(np.round(ymin * yscale)), 
+        int(np.round(xmax * xscale)), 
+        int(np.round(ymax * yscale))
     ]
 
 
