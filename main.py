@@ -19,7 +19,7 @@ args = parser.parse_args()
 
 def visdrone2voc():
     for s in visdrone_sets:
-        print(f'[VisDrone/{s}] processing started ...')
+        print(f'[VisDrone/{s[2]}] processing started ...')
         set_name = "-".join(s)
         set_anns_path = path.join(args.visdrone_path, f"VisDrone{set_name}", "annotations")
         set_imgs_path = path.join(args.visdrone_path, f"VisDrone{set_name}", "images")
@@ -36,7 +36,7 @@ def visdrone2voc():
             img_meta = process_image(src_img, (args.w, args.h, 3), voc_images)
             process_annotation(src_ann, img_meta, voc_anns)
             print(f'done processing {img_meta["file"]}')
-        print(f'[VisDrone/{s}] processing done.')
+        print(f'[VisDrone/{s[2]}] processing done.')
 
 if __name__ == '__main__':
     visdrone2voc()
